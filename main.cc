@@ -10,6 +10,7 @@
 int main() {
   // Begin test
   Test::simpleFactoryTest();
+  Test::factoryTest();
 
   return 0;
 }
