@@ -12,6 +12,8 @@ namespace Test {
 
 void simpleFactoryTest();
 
+void factoryTest();
+
 }  // namespace Test
 
 #endif  // TEST_H_

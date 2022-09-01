@@ -26,6 +26,11 @@ class Banana : public Fruit {
   virtual void show() { std::cout << "Banana" << std::endl; }
 };
 
+class Pear : public Fruit {
+ public:
+  virtual void show() { std::cout << "Pear" << std::endl; }
+};
+
 class SimpleFactory {
  public:
   static Fruit* createFruit(const std::string& name) {
@@ -33,6 +38,8 @@ class SimpleFactory {
       return new Apple;
     } else if (name == "Banana") {
       return new Banana;
+    } else if (name == "Pear") {
+      return new Pear;
     } else {
       return NULL;
     }
