@@ -11,6 +11,7 @@ int main() {
   // Begin test
   Test::simpleFactoryTest();
   Test::factoryTest();
+  Test::abstractFactoryTest();
 
   return 0;
 }
