@@ -9,7 +9,6 @@
 #define FACTORY_H_
 
 #include <iostream>
-#include <string>
 
 class Shape {
  public:

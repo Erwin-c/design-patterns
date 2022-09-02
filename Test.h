@@ -14,6 +14,8 @@ void simpleFactoryTest();
 
 void factoryTest();
 
+void abstractFactoryTest();
+
 }  // namespace Test
 
 #endif  // TEST_H_

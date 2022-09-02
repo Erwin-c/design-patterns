@@ -5,6 +5,7 @@
  *      Author: Erwin
  */
 
+#include "AbstractFactory.h"
 #include "Factory.h"
 #include "SimpleFactory.h"
 
@@ -30,8 +31,8 @@ void simpleFactoryTest() {
 }
 
 void factoryTest() {
-  Factory* factory = NULL;
-  Shape* shape = NULL;
+  Factory* factory = nullptr;
+  Shape* shape = nullptr;
 
   factory = new RectangleFactory;
   shape = factory->createShape();
@@ -53,6 +54,54 @@ void factoryTest() {
   shape->show();
   delete factory;
   delete shape;
+
+  return;
+}
+
+void abstractFactoryTest() {
+  AbstractFactory* factory = nullptr;
+  AbstractPencil* pencil = nullptr;
+  AbstractRubber* rubber = nullptr;
+  AbstractNotebook* notebook = nullptr;
+
+  factory = new ChineseFactory;
+  pencil = factory->createPencil();
+  pencil->show();
+  rubber = factory->createRubber();
+  rubber->show();
+  notebook = factory->createNotebook();
+  // TBD: warning: deleting object of abstract class type ‘AbstractPencil’ which
+  // has non-virtual destructor will cause undefined behavior
+  // [-Wdelete-non-virtual-dtor]
+  notebook->show();
+  delete pencil;
+  delete rubber;
+  delete notebook;
+  delete factory;
+
+  factory = new AmericanFactory;
+  pencil = factory->createPencil();
+  pencil->show();
+  rubber = factory->createRubber();
+  rubber->show();
+  notebook = factory->createNotebook();
+  notebook->show();
+  delete pencil;
+  delete rubber;
+  delete notebook;
+  delete factory;
+
+  factory = new JapaneseFactory;
+  pencil = factory->createPencil();
+  pencil->show();
+  rubber = factory->createRubber();
+  rubber->show();
+  notebook = factory->createNotebook();
+  notebook->show();
+  delete pencil;
+  delete rubber;
+  delete notebook;
+  delete factory;
 
   return;
 }
