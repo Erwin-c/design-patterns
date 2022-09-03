@@ -12,6 +12,8 @@
 
 class AbstractPencil {
  public:
+  virtual ~AbstractPencil() { std::cout << "~AbstractPencil()" << std::endl; }
+
   virtual void show() = 0;
 };
 
@@ -32,6 +34,8 @@ class JapanesePencil : public AbstractPencil {
 
 class AbstractRubber {
  public:
+  virtual ~AbstractRubber() { std::cout << "~AbstractRubber()" << std::endl; }
+
   virtual void show() = 0;
 };
 
@@ -52,6 +56,10 @@ class JapaneseRubber : public AbstractRubber {
 
 class AbstractNotebook {
  public:
+  virtual ~AbstractNotebook() {
+    std::cout << "~AbstractNotebook()" << std::endl;
+  }
+
   virtual void show() = 0;
 };
 
@@ -72,6 +80,8 @@ class JapaneseNotebook : public AbstractNotebook {
 
 class AbstractFactory {
  public:
+  virtual ~AbstractFactory() { std::cout << "~AbstractFactory()" << std::endl; }
+
   virtual AbstractPencil* createPencil() = 0;
   virtual AbstractRubber* createRubber() = 0;
   virtual AbstractNotebook* createNotebook() = 0;

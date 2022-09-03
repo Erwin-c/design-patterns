@@ -8,15 +8,16 @@
 #include "AbstractFactory.h"
 #include "Factory.h"
 #include "SimpleFactory.h"
+#include "SingletonLazy.h"
 
 namespace Test {
 
 void simpleFactoryTest() {
+  std::cout << "-------------------------------------------------" << std::endl;
+  std::cout << "Start simple factory test:" << std::endl;
+
   Fruit* fruit = SimpleFactory::createFruit("Apple");
   fruit->show();
-  // TBD: warning: deleting object of abstract class type ‘Fruit’ which has
-  // non-virtual destructor will cause undefined behavior
-  // [-Wdelete-non-virtual-dtor]
   delete fruit;
 
   fruit = SimpleFactory::createFruit("Banana");
@@ -27,19 +28,21 @@ void simpleFactoryTest() {
   fruit->show();
   delete fruit;
 
+  std::cout << "End ^-^" << std::endl;
+
   return;
 }
 
 void factoryTest() {
+  std::cout << "-------------------------------------------------" << std::endl;
+  std::cout << "Start factory test:" << std::endl;
+
   Factory* factory = nullptr;
   Shape* shape = nullptr;
 
   factory = new RectangleFactory;
   shape = factory->createShape();
   shape->show();
-  // TBD: warning: deleting object of abstract class type ‘Fruit’ which has
-  // non-virtual destructor will cause undefined behavior
-  // [-Wdelete-non-virtual-dtor]
   delete factory;
   delete shape;
 
@@ -55,10 +58,15 @@ void factoryTest() {
   delete factory;
   delete shape;
 
+  std::cout << "End ^-^" << std::endl;
+
   return;
 }
 
 void abstractFactoryTest() {
+  std::cout << "-------------------------------------------------" << std::endl;
+  std::cout << "Start abstract factory test:" << std::endl;
+
   AbstractFactory* factory = nullptr;
   AbstractPencil* pencil = nullptr;
   AbstractRubber* rubber = nullptr;
@@ -70,9 +78,6 @@ void abstractFactoryTest() {
   rubber = factory->createRubber();
   rubber->show();
   notebook = factory->createNotebook();
-  // TBD: warning: deleting object of abstract class type ‘AbstractPencil’ which
-  // has non-virtual destructor will cause undefined behavior
-  // [-Wdelete-non-virtual-dtor]
   notebook->show();
   delete pencil;
   delete rubber;
@@ -102,6 +107,20 @@ void abstractFactoryTest() {
   delete rubber;
   delete notebook;
   delete factory;
+
+  std::cout << "End ^-^" << std::endl;
+
+  return;
+}
+
+void singletonLazyTest() {
+  std::cout << "-------------------------------------------------" << std::endl;
+  std::cout << "Start singleton lazy test:" << std::endl;
+
+  SingletonLazy* singleton = SingletonLazy::getInstance();
+  singleton->show();
+
+  std::cout << "End ^-^" << std::endl;
 
   return;
 }
