@@ -12,6 +12,7 @@ int main() {
   Test::simpleFactoryTest();
   Test::factoryTest();
   Test::abstractFactoryTest();
+  Test::singletonLazyTest();
 
   return 0;
 }

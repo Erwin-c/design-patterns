@@ -16,6 +16,8 @@ void factoryTest();
 
 void abstractFactoryTest();
 
+void singletonLazyTest();
+
 }  // namespace Test
 
 #endif  // TEST_H_

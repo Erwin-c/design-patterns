@@ -13,6 +13,12 @@
 
 class Fruit {
  public:
+  // The virtual deconstructor is necessary
+  // warning: deleting object of abstract class type ‘Fruit’ which has
+  // non-virtual destructor will cause undefined behavior
+  // [-Wdelete-non-virtual-dtor]
+  virtual ~Fruit() { std::cout << "~Fruit()" << std::endl; }
+
   virtual void show() = 0;
 };
 
@@ -41,7 +47,7 @@ class SimpleFactory {
     } else if (name == "Pear") {
       return new Pear;
     } else {
-      return NULL;
+      return nullptr;
     }
   }
 };

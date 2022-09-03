@@ -12,6 +12,8 @@
 
 class Shape {
  public:
+  virtual ~Shape() { std::cout << "~Shape()" << std::endl; }
+
   virtual void show() = 0;
 };
 
@@ -32,6 +34,8 @@ class Circle : public Shape {
 
 class Factory {
  public:
+  virtual ~Factory() { std::cout << "~Factory()" << std::endl; }
+
   virtual Shape* createShape() = 0;
 };
 
