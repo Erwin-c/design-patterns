@@ -18,6 +18,8 @@ void abstractFactoryTest();
 
 void singletonLazyTest();
 
+void singletonHungryTest();
+
 }  // namespace Test
 
 #endif  // TEST_H_
