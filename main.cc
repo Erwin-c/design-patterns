@@ -13,6 +13,7 @@ int main() {
   Test::factoryTest();
   Test::abstractFactoryTest();
   Test::singletonLazyTest();
+  Test::singletonHungryTest();
 
   return 0;
 }

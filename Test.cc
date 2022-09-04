@@ -8,6 +8,7 @@
 #include "AbstractFactory.h"
 #include "Factory.h"
 #include "SimpleFactory.h"
+#include "SingletonHungry.h"
 #include "SingletonLazy.h"
 
 namespace Test {
@@ -118,6 +119,18 @@ void singletonLazyTest() {
   std::cout << "Start singleton lazy test:" << std::endl;
 
   SingletonLazy* singleton = SingletonLazy::getInstance();
+  singleton->show();
+
+  std::cout << "End ^-^" << std::endl;
+
+  return;
+}
+
+void singletonHungryTest() {
+  std::cout << "-------------------------------------------------" << std::endl;
+  std::cout << "Start singleton hungry test:" << std::endl;
+
+  SingletonHungry* singleton = SingletonHungry::getInstance();
   singleton->show();
 
   std::cout << "End ^-^" << std::endl;
