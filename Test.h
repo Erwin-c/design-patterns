@@ -1,8 +1,7 @@
 /*
  * Test.h
  *
- *  Created on: Aug 30, 2022
- *      Author: Erwin
+ *  Author: Erwin
  */
 
 #ifndef TEST_H_
@@ -19,6 +18,10 @@ void abstractFactoryTest();
 void singletonLazyTest();
 
 void singletonHungryTest();
+
+void proxyTest();
+
+void facadeTest();
 
 }  // namespace Test
 

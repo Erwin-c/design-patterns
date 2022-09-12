@@ -1,8 +1,7 @@
 /*
  * AbstractFactory.h
  *
- *  Created on: Sep 2, 2022
- *      Author: Erwin
+ *  Author: Erwin
  */
 
 #ifndef ABSTRACT_FACTORY_H_
@@ -19,17 +18,26 @@ class AbstractPencil {
 
 class ChinesePencil : public AbstractPencil {
  public:
-  virtual void show() { std::cout << "Chinese pencil" << std::endl; }
+  virtual void show() {
+    std::cout << "Chinese pencil" << std::endl;
+    return;
+  }
 };
 
 class AmericanPencil : public AbstractPencil {
  public:
-  virtual void show() { std::cout << "American pencil" << std::endl; }
+  virtual void show() {
+    std::cout << "American pencil" << std::endl;
+    return;
+  }
 };
 
 class JapanesePencil : public AbstractPencil {
  public:
-  virtual void show() { std::cout << "Japanese pencil" << std::endl; }
+  virtual void show() {
+    std::cout << "Japanese pencil" << std::endl;
+    return;
+  }
 };
 
 class AbstractRubber {
@@ -41,17 +49,26 @@ class AbstractRubber {
 
 class ChineseRubber : public AbstractRubber {
  public:
-  virtual void show() { std::cout << "Chinese Rubber" << std::endl; }
+  virtual void show() {
+    std::cout << "Chinese Rubber" << std::endl;
+    return;
+  }
 };
 
 class AmericanRubber : public AbstractRubber {
  public:
-  virtual void show() { std::cout << "American Rubber" << std::endl; }
+  virtual void show() {
+    std::cout << "American Rubber" << std::endl;
+    return;
+  }
 };
 
 class JapaneseRubber : public AbstractRubber {
  public:
-  virtual void show() { std::cout << "Japanese Rubber" << std::endl; }
+  virtual void show() {
+    std::cout << "Japanese Rubber" << std::endl;
+    return;
+  }
 };
 
 class AbstractNotebook {
@@ -65,17 +82,26 @@ class AbstractNotebook {
 
 class ChineseNotebook : public AbstractNotebook {
  public:
-  virtual void show() { std::cout << "Chinese Notebook" << std::endl; }
+  virtual void show() {
+    std::cout << "Chinese Notebook" << std::endl;
+    return;
+  }
 };
 
 class AmericanNotebook : public AbstractNotebook {
  public:
-  virtual void show() { std::cout << "American Notebook" << std::endl; }
+  virtual void show() {
+    std::cout << "American Notebook" << std::endl;
+    return;
+  }
 };
 
 class JapaneseNotebook : public AbstractNotebook {
  public:
-  virtual void show() { std::cout << "Japanese Notebook" << std::endl; }
+  virtual void show() {
+    std::cout << "Japanese Notebook" << std::endl;
+    return;
+  }
 };
 
 class AbstractFactory {

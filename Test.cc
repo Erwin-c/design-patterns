@@ -1,12 +1,13 @@
 /*
  * Test.cc
  *
- *  Created on: Aug 30, 2022
- *      Author: Erwin
+ *  Author: Erwin
  */
 
 #include "AbstractFactory.h"
+#include "Facade.h"
 #include "Factory.h"
+#include "Proxy.h"
 #include "SimpleFactory.h"
 #include "SingletonHungry.h"
 #include "SingletonLazy.h"
@@ -134,6 +135,30 @@ void singletonHungryTest() {
   singleton->show();
 
   std::cout << "End ^-^" << std::endl;
+
+  return;
+}
+
+void proxyTest() {
+  std::cout << "-------------------------------------------------" << std::endl;
+  std::cout << "Start proxy test:" << std::endl;
+
+  Proxy* proxy = new Proxy("root", "root");
+  proxy->run();
+
+  Proxy* proxy2 = new Proxy("admin", "admin");
+  proxy2->run();
+
+  std::cout << "End ^-^" << std::endl;
+
+  return;
+}
+
+void facadeTest() {
+  KTVMode* ktv = new KTVMode;
+
+  ktv->onKtv();
+  ktv->offKtv();
 
   return;
 }

@@ -1,8 +1,7 @@
 /*
  * SingletonHungry.h
  *
- *  Created on: Sep 4, 2022
- *      Author: Erwin
+ *  Author: Erwin
  */
 
 #ifndef SINGLETON_HUNGRY_H_
@@ -14,7 +13,10 @@ class SingletonHungry {
  public:
   static SingletonHungry* getInstance() { return pSingleton; }
 
-  void show() { std::cout << "Singleton hungry" << std::endl; }
+  void show() {
+    std::cout << "Singleton hungry" << std::endl;
+    return;
+  }
 
  private:
   // Called before main()
