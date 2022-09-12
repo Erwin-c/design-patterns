@@ -1,8 +1,7 @@
 /*
  * main.cc
  *
- *  Created on: Aug 30, 2022
- *      Author: Erwin
+ *  Author: Erwin
  */
 
 #include "Test.h"
@@ -14,6 +13,8 @@ int main() {
   Test::abstractFactoryTest();
   Test::singletonLazyTest();
   Test::singletonHungryTest();
+  Test::proxyTest();
+  Test::facadeTest();
 
   return 0;
 }

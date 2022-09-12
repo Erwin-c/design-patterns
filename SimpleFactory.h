@@ -1,8 +1,7 @@
 /*
  * SimpleFactory.h
  *
- *  Created on: Aug 30, 2022
- *      Author: Erwin
+ *  Author: Erwin
  */
 
 #ifndef SIMPLE_FACTORY_H_
@@ -24,17 +23,26 @@ class Fruit {
 
 class Apple : public Fruit {
  public:
-  virtual void show() { std::cout << "Apple" << std::endl; }
+  virtual void show() {
+    std::cout << "Apple" << std::endl;
+    return;
+  }
 };
 
 class Banana : public Fruit {
  public:
-  virtual void show() { std::cout << "Banana" << std::endl; }
+  virtual void show() {
+    std::cout << "Banana" << std::endl;
+    return;
+  }
 };
 
 class Pear : public Fruit {
  public:
-  virtual void show() { std::cout << "Pear" << std::endl; }
+  virtual void show() {
+    std::cout << "Pear" << std::endl;
+    return;
+  }
 };
 
 class SimpleFactory {
@@ -46,9 +54,9 @@ class SimpleFactory {
       return new Banana;
     } else if (name == "Pear") {
       return new Pear;
-    } else {
-      return nullptr;
     }
+
+    return nullptr;
   }
 };
 

@@ -1,8 +1,7 @@
 /*
  * SingletonLazy.h
  *
- *  Created on: Sep 3, 2022
- *      Author: Erwin
+ *  Author: Erwin
  */
 
 #ifndef SINGLETON_LAZY_H_
@@ -20,7 +19,10 @@ class SingletonLazy {
     return pSingleton;
   }
 
-  void show() { std::cout << "Singleton lazy" << std::endl; }
+  void show() {
+    std::cout << "Singleton lazy" << std::endl;
+    return;
+  }
 
  private:
   SingletonLazy() { std::cout << "SingletonLazy()" << std::endl; }

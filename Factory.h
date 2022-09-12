@@ -1,8 +1,7 @@
 /*
  * Factory.h
  *
- *  Created on: Sep 1, 2022
- *      Author: Erwin
+ *  Author: Erwin
  */
 
 #ifndef FACTORY_H_
@@ -19,22 +18,34 @@ class Shape {
 
 class Rectangle : public Shape {
  public:
-  virtual void show() { std::cout << "Rectangle" << std::endl; }
+  virtual void show() {
+    std::cout << "Rectangle" << std::endl;
+    return;
+  }
 };
 
 class Square : public Shape {
  public:
-  virtual void show() { std::cout << "Square" << std::endl; }
+  virtual void show() {
+    std::cout << "Square" << std::endl;
+    return;
+  }
 };
 
 class Circle : public Shape {
  public:
-  virtual void show() { std::cout << "Circle" << std::endl; }
+  virtual void show() {
+    std::cout << "Circle" << std::endl;
+    return;
+  }
 };
 
 class Factory {
  public:
-  virtual ~Factory() { std::cout << "~Factory()" << std::endl; }
+  virtual ~Factory() {
+    std::cout << "~Factory()" << std::endl;
+    return;
+  }
 
   virtual Shape* createShape() = 0;
 };
