@@ -15,6 +15,7 @@ int main() {
   Test::singletonHungryTest();
   Test::proxyTest();
   Test::facadeTest();
+  Test::adapterTest();
 
   return 0;
 }
