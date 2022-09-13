@@ -4,7 +4,10 @@
  *  Author: Erwin
  */
 
+#include <vector>
+
 #include "AbstractFactory.h"
+#include "Adapter.h"
 #include "Facade.h"
 #include "Factory.h"
 #include "Proxy.h"
@@ -155,10 +158,27 @@ void proxyTest() {
 }
 
 void facadeTest() {
+  std::cout << "-------------------------------------------------" << std::endl;
+  std::cout << "Start facade test:" << std::endl;
   KTVMode* ktv = new KTVMode;
 
   ktv->onKtv();
   ktv->offKtv();
+
+  std::cout << "End ^-^" << std::endl;
+
+  return;
+}
+
+void adapterTest() {
+  std::cout << "-------------------------------------------------" << std::endl;
+  std::cout << "Start adapter test:" << std::endl;
+
+  std::vector<int> v{1, 2, 3, 4, 5};
+
+  std::for_each(v.begin(), v.end(), Bind(55));
+
+  std::cout << "End ^-^" << std::endl;
 
   return;
 }

@@ -23,6 +23,8 @@ void proxyTest();
 
 void facadeTest();
 
+void adapterTest();
+
 }  // namespace Test
 
 #endif  // TEST_H_
