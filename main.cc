@@ -16,6 +16,7 @@ int main() {
   Test::proxyTest();
   Test::facadeTest();
   Test::adapterTest();
+  Test::templateTest();
 
   return 0;
 }

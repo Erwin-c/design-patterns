@@ -25,6 +25,8 @@ void facadeTest();
 
 void adapterTest();
 
+void templateTest();
+
 }  // namespace Test
 
 #endif  // TEST_H_
