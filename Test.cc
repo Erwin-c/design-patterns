@@ -14,6 +14,7 @@
 #include "SimpleFactory.h"
 #include "SingletonHungry.h"
 #include "SingletonLazy.h"
+#include "Template.h"
 
 namespace Test {
 
@@ -176,7 +177,23 @@ void adapterTest() {
 
   std::vector<int> v{1, 2, 3, 4, 5};
 
-  std::for_each(v.begin(), v.end(), Bind(55));
+  std::for_each(v.begin(), v.end(), bind(55));
+
+  std::cout << "End ^-^" << std::endl;
+
+  return;
+}
+
+void templateTest() {
+  std::cout << "-------------------------------------------------" << std::endl;
+  std::cout << "Start tempalte test:" << std::endl;
+
+  Coffee* coffee = new Coffee;
+  coffee->make();
+  // warning: deleting object of polymorphic class type ‘Coffee’ which has
+  // non-virtual destructor might cause undefined behavior
+  // [-Wdelete-non-virtual-dtor]
+  delete coffee;
 
   std::cout << "End ^-^" << std::endl;
 

@@ -4,6 +4,9 @@
  *  Author: Erwin
  */
 
+#ifndef ADAPTER_H_
+#define ADAPTER_H_
+
 class Print {
  public:
   void operator()(int v1, int v2) {
@@ -31,4 +34,6 @@ class Adapter : public Target {
   int param;
 };
 
-Adapter Bind(int v) { return Adapter(v); }
+Adapter bind(int v) { return Adapter(v); }
+
+#endif  // ADAPTER_H_
