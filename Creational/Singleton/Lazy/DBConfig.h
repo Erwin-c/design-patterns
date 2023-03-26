@@ -21,7 +21,7 @@ class DBConfig {
   std::string getPassword();
 
  private:
-  static DBConfig* config;
+  static DBConfig* volatile config;
 
   std::string conn;
   std::string username;

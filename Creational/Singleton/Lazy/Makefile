@@ -1,10 +1,10 @@
 # 编译参数.
 COMPILE_FLAGS = -std=c++2a -g -Wall -Wextra
 
-all: Lazy
+all: ThreadSec
 
-Lazy: Lazy.cc DBConfig.h DBConfig.cc
-	g++ $(COMPILE_FLAGS) -o Lazy Lazy.cc DBConfig.cc
+ThreadSec: ThreadSec.cc DBConfig.h DBConfig.cc
+	g++ $(COMPILE_FLAGS) -o ThreadSec ThreadSec.cc DBConfig.cc
 
 clean:
-	rm -f Lazy
+	rm -f ThreadSec
