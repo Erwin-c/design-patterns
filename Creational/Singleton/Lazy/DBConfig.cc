@@ -8,12 +8,18 @@
 
 #include <fstream>
 #include <iostream>
+#include <mutex>
 
-DBConfig* DBConfig::config = nullptr;
+DBConfig* volatile DBConfig::config = nullptr;
+std::mutex mtx;
 
 DBConfig* DBConfig::getInstance() {
   if (config == nullptr) {
-    config = new DBConfig();
+    std::lock_guard<std::mutex> guard(mtx);
+
+    if (config == nullptr) {
+      config = new DBConfig();
+    }
   }
 
   return config;
